@@ -25,9 +25,9 @@ def get_secret(key):
 # Initialize Azure LLM
 llm = AzureChatOpenAI(
     azure_deployment=get_secret("AZURE_OPENAI_MODEL"),
-    api_version=get_secret("AZURE_OPENAI_API_VERSION"),
+    openai_api_version=get_secret("AZURE_OPENAI_API_VERSION"),
     azure_endpoint=get_secret("AZURE_OPENAI_ENDPOINT"),
-    api_key=get_secret("AZURE_OPENAI_API_KEY"),
+    openai_api_key=get_secret("AZURE_OPENAI_API_KEY"),
     temperature=0
 )
 

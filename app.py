@@ -12,15 +12,22 @@ import docx
 # Supported File Types
 SUPPORTED_TYPES = ["xlsx", "xls", "csv", "txt", "md", "pdf", "docx"]
 
-# Load environment variables
+# Load environment variables (local dev)
 load_dotenv()
+
+# Read secrets: prefer st.secrets (Streamlit Cloud), fall back to os.getenv (local)
+def get_secret(key):
+    try:
+        return st.secrets[key]
+    except (KeyError, FileNotFoundError):
+        return os.getenv(key)
 
 # Initialize Azure LLM
 llm = AzureChatOpenAI(
-    azure_deployment=os.getenv("AZURE_OPENAI_MODEL"),
-    api_version=os.getenv("AZURE_OPENAI_API_VERSION"),
-    azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
-    api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+    azure_deployment=get_secret("AZURE_OPENAI_MODEL"),
+    api_version=get_secret("AZURE_OPENAI_API_VERSION"),
+    azure_endpoint=get_secret("AZURE_OPENAI_ENDPOINT"),
+    api_key=get_secret("AZURE_OPENAI_API_KEY"),
     temperature=0
 )
 

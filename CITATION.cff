@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: "Goal-Based Agent (Job Application Assistant)"
+authors:
+  - family-names: "Asif"
+    given-names: ""
+date-released: 2026-04-15
+version: "1.0.0"
+license: "MIT"
+repository-code: "<your-repo-url>"

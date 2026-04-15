@@ -1,0 +1,41 @@
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.log
+
+# --- Virtual Environments ---
+venv/
+.venv/
+env/
+ENV/
+
+# --- Environment Variables ---
+.env
+*.env
+
+# --- VS Code ---
+.vscode/
+*.code-workspace
+
+# --- OS Specific ---
+.DS_Store
+Thumbs.db
+
+# --- Build / Packaging ---
+build/
+dist/
+*.egg
+.eggs/
+*.manifest
+*.spec
+
+# --- Testing ---
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+.nox/
